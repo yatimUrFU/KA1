@@ -107,7 +107,7 @@ if __name__ == '__main__':
     end = points_list[1]
     lookup_path.append(start)
     history_path.append(start)
-
+try:
     while lookup_path[-1] != end:
         now = lookup_path[-1]
         if left(now) or right(now) or up(now) or down(now):
@@ -115,3 +115,7 @@ if __name__ == '__main__':
         lookup_path.pop()
 
     write_output()
+except:
+    file = open("output.txt", "w+")
+    file.write("N" + '\n')
+
